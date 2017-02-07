@@ -2,9 +2,9 @@ package models.shopping;
 
 import com.avaje.ebean.Model;
 import models.users.Customer;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import models.products.Product;
+import java.util.*;
+import javax.persistence.*;
 import java.util.List;
 
 
@@ -15,10 +15,10 @@ public class Basket extends Model {
     @Id
     private Long id;
     
-
+    @OneToMany(mappedBy = "basket", cascade = CascadeType.PERSIST)
     private List<OrderItem> basketItems;
     
-
+    @OneToOne
     private Customer customer;
 
     // Default constructor

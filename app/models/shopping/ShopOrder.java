@@ -21,7 +21,7 @@ public class ShopOrder extends Model {
     
     private Date OrderDate;
     
-    @ManyToOne(mapped by="order", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy="order", cascade = CascadeType.ALL)
     private List<OrderItem> items;
     
     @ManyToOne

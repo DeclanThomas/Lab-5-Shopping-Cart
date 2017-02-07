@@ -1,5 +1,7 @@
 package controllers;
-
+import models.products.Product;
+import models.shopping.Basket;
+import models.shopping.OrderItem;
 import models.shopping.ShopOrder;
 import models.users.Customer;
 import models.users.User;
@@ -10,6 +12,8 @@ import views.html.*;
 
 // Import models
 // Import security controllers
+
+
 
 
 
@@ -120,7 +124,7 @@ public class ShoppingCtrl extends Controller {
 
         order.update();
 
-        c.getBasket().setBasketItems(null)
+        c.getBasket().setBasketItems(null);
         c.getBasket().update();
 
         return ok(orderConfirmed.render(c, order));
